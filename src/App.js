@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import Navigation from './components/Navigation/Navigation';
+import Logo from './components/Logo/Logo';
+import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
+import Rank from './components/Rank/Rank';
+import { useState } from 'react';
 
 function App() {
+  const [inputState, setInputState] = useState({ input: '' });
+
+  const onInputChange = (event) => {
+    // setInputState((prevState) => prevState.input.concat(event.target.value));
+    console.log(event.target.value);
+  };
+
+  const onButtonSubmit = () => {
+    console.log('submitted');
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation />
+      <Logo />
+      <Rank />
+      <ImageLinkForm
+        onInputChange={onInputChange}
+        onButtonSubmit={onButtonSubmit}
+      />
+      {/*<FaceRecognition /> */}
     </div>
   );
 }

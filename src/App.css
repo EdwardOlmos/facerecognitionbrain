@@ -2,9 +2,14 @@
   text-align: center;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
+
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
